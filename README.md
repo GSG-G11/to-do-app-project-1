@@ -12,10 +12,29 @@ TODO web app
 
 TODO web app for users To add some note and edit it and deleted it.
 
-## Design
+## Design Web Responsive (Desktop)
 
+---
 
-![alt text](https://github.com/GSG-G11/to-do-app-project-1/blob/AhmedQeshta/GitHubImage/test.jpg)
+-   Design Web Home page
+
+    ![Design 1](https://imgur.com/EZBBxQJ.png)
+
+## Design Web Responsive (Mobile)
+
+---
+
+-   Design Mobile screen for Home page
+
+    ![Design 1](https://imgur.com/jDgL3pC.png)
+
+-   Design Mobile screen for Create Note
+
+    ![Design 3](https://imgur.com/bRh56ru.png)
+
+-   Design Mobile screen for Edit Note
+
+    ![Design 2](https://imgur.com/acX0MGT.png)
 
 ### User Stories:
 

@@ -12,7 +12,112 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <!-- fixed header (day, month, year, numberOfTasks) -->
+        <div class="container-fixd-header">
+            <div class="item-header">
+                <div class="day-text">name day</div>
+                <!-- end of day text -->
+                <div class="number-tasks">11 Tasks</div>
+                <!-- end of  number tasks -->
+            </div>
+            <!-- end of  item header -->
+
+            <div class="item-header">
+                <div class="date-text">26 Jan 2022</div>
+                <!-- end of day text -->
+            </div>
+            <!-- end of  item header -->
+
+            <div class="item-header-add">
+                <button class="button-add">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <!-- end of button add -->
+            </div>
+            <!-- end of  item header add -->
+        </div>
+        <!-- end of fixed header -->
+
+        <!-- scrolling body -->
+        <div class="container-body">
+            <div class="note-list">
+                <div class="note-left">
+                    <div class="check-box">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <!-- end of  check box -->
+                    <div class="container-note">
+                        <h3 class="title-note">Title Note</h3>
+                        <p class="description-note">Design Note</p>
+                    </div>
+                    <!-- end of  container note -->
+                </div>
+                <!-- end of note left -->
+
+                <div class="note-right">
+                    <div class="time-note">7:50 am</div>
+                    <div class="actions-note">
+                        <i class="fa fa-trush"></i>
+                        <i class="fa fa-edit"></i>
+                    </div>
+                </div>
+                <!-- end of note right -->
+            </div>
+        </div>
+
+        <!-- contaner fixd bottom nav -->
+        <div class="contaner-fixd-bottom-nav">
+            <div class="contaner-nav">
+                <button class="button-delete-completed">
+                    Delete completed
+                </button>
+            </div>
+        </div>
+        <!-- end of contaner fixd bottom nav -->
+
+        <!-- contaner modal -->
+        <div class="contaner-modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-body">
+                <h3 class="modal-title">Modal Title</h3>
+
+                <form class="form-add-note" id="form-add-note">
+                    <label class="form-label">
+                        <input type="text" class="form-title" placeholder="Your Title" autocomplete="off">
+                    </label>
+
+                    <label class="form-label">
+                       <textarea class="form-description">Your Description ...</textarea> 
+                    </label>
+
+                    <button type="submit" class="button-container">Create</button>
+                </form>
+
+                <form class="form-update-note form-hiden" id="form-update-note">
+                    <label class="form-label">
+                        <input type="text" class="form-title" value="hi how are you..." autocomplete="off">
+                    </label>
+
+                    <label class="form-label">
+                       <textarea class="form-description">hi how are you</textarea> 
+                    </label>
+
+                    <button type="submit" class="button-container">Update</button>
+                </form>
+            </div>
+        </div><!-- end of Contaner modal-->
+
         <!-- Scripts 'js' -->
         <script src="app.js"></script>
+
+        <!-- *** Load this after ***
+            *** loaded all page *** -->
+        <!-- *** Font Awesome Icons*** -->
+        <link
+            rel="stylesheet"
+            href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+            crossorigin="anonymous"
+        />
     </body>
 </html>
