@@ -14,7 +14,8 @@ TODO web app for users To add some note and edit it and deleted it.
 
 ## Design
 
-![alt text](https://github.com/AhmedQeshta/GSG-G11/to-do-app-project-1/GitHubImage/test.jpg?raw=true)
+
+![alt text](https://github.com/GSG-G11/to-do-app-project-1/blob/fd6dc91d8812dbcb230dcee94df588bd84419879/GitHubImage/test.jpg)
 
 ### User Stories:
 
