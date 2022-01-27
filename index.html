@@ -25,7 +25,7 @@
         <div class="item-header">
             <div class="day-text">Wednesday</div>
             <!-- end of day text -->
-            <div class="number-tasks">11 Tasks</div>
+            <div class="number-tasks" id="numberOfTasks"></div>
             <!-- end of  number tasks -->
         </div>
         <!-- end of  item header -->
@@ -51,30 +51,30 @@
 <!-- end of fixed header -->
 
 <!-- scrolling body -->
-<div class="container-body">
-    <div class="note-list">
-        <div class="note-left">
-            <div class="check-box checked-note">
-                <i class="fa fa-check"></i>
-            </div>
-            <!-- end of  check box -->
-            <div class="container-note checked-note-body">
-                <h3 class="title-note">Title Note</h3>
-                <p class="description-note">Design Note</p>
-            </div>
-            <!-- end of  container note -->
-        </div>
-        <!-- end of note left -->
+<div class="container-body" id="container-body">
+    <!--    <div class="note-list">-->
+    <!--        <div class="note-left">-->
+    <!--            <div class="check-box checked-note">-->
+    <!--                <i class="fa fa-check"></i>-->
+    <!--            </div>-->
+    <!--            &lt;!&ndash; end of  check box &ndash;&gt;-->
+    <!--            <div class="container-note checked-note-body">-->
+    <!--                <h3 class="title-note">Title Note</h3>-->
+    <!--                <p class="description-note">Design Note</p>-->
+    <!--            </div>-->
+    <!--            &lt;!&ndash; end of  container note &ndash;&gt;-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash; end of note left &ndash;&gt;-->
 
-        <div class="note-right">
-            <div class="time-note">7:50 am</div>
-            <div class="actions-note">
-                <i class="fa fa-trash"></i>
-                <!--                <i class="fa fa-edit"></i>-->
-            </div>
-        </div>
-        <!-- end of note right -->
-    </div>
+    <!--        <div class="note-right">-->
+    <!--            <div class="time-note">7:50 am</div>-->
+    <!--            <div class="actions-note">-->
+    <!--                <i class="fa fa-trash"></i>-->
+    <!--                &lt;!&ndash;                <i class="fa fa-edit"></i>&ndash;&gt;-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash; end of note right &ndash;&gt;-->
+    <!--    </div>-->
 </div>
 
 
@@ -89,11 +89,11 @@
 
         <form class="form-add-note" id="form-add-note">
             <label class="form-label">
-                <input autocomplete="off" class="form-title" placeholder="Your Title" type="text">
+                <input autocomplete="off" class="form-title" id="form-title" placeholder="Your Title" type="text">
             </label>
 
             <label class="form-label">
-                <textarea class="form-description">Your Description ...</textarea>
+                <textarea class="form-description" id="form-description" placeholder="Your Description ..."></textarea>
             </label>
 
             <div class="form-container-button">
