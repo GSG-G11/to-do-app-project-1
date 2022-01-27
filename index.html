@@ -37,7 +37,7 @@
         <!-- end of  item header -->
 
         <div class="item-header-add">
-            <button class="button-add">
+            <button class="button-add" id="button-show-form">
                 <i class="fa fa-plus"></i>
             </button>
             <!-- end of button add -->
@@ -79,11 +79,11 @@
 
 
 <!-- container modal --> <!-- modal-hide or modal-show-->
-<div class="container-modal modal-hide">
-    <div class="modal-overlay"></div>
+<div class="container-modal modal-hide" id="modal-container">
+    <div class="modal-overlay" id="outer-modal"></div>
     <div class="modal-body">
 
-        <i class="modal-close">X</i>
+        <i class="modal-close" id="close-modal">X</i>
 
         <h3 class="modal-title">Create New Note</h3>
 
