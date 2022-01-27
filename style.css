@@ -376,11 +376,22 @@ body {
 }
 
 
-.form-title, .form-title::placeholder, .form-description {
+.form-title, .form-description {
   width: 100%;
   background: #DFDAFF;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
   border-radius: 5px 2px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 17px;
+  color: #9483F8;
+  padding: 10px 5px;
+  margin: 15px auto;
+}
+
+.form-title::placeholder, .form-description::placeholder {
+  background: #DFDAFF;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
