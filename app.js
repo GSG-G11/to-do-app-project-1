@@ -41,13 +41,14 @@ const NewNote = (id, title, description, time) => {
   return `
    <div class="note-list" id="note-number-${id}" data-index-number="${id}">
         <div class="note-left">
-            <div class="check-box checked-note" id="btn-check-${id}">
-                <i class="fa fa-check"></i>
-            </div>
+          <!--  <div class="check-box checked-note" id="btn-check-${id}">
+            <i class="fa fa-check"></i>
+          </div> -->
             <!-- end of  check box -->
-            <div class="container-note checked-note-body">
-                <h3 class="title-note">${title}</h3>
-                <p class="description-note">${description}</p>
+            <!--  checked-note-body    ,    un-checked-note-body     -->
+            <div class="container-note un-checked-note-body">
+                <h3 class="title-note ">${title}</h3>
+                <p class="description-note ">${description}</p>
             </div>
             <!-- end of  container note -->
         </div>
@@ -180,5 +181,23 @@ const RemoveDataFromLocalStorage = (indexNote) => {
 
 
 // fun for done tasks
+const noteList = document.querySelectorAll('.container-note');
+
+noteList.forEach((note) => {
+  note.addEventListener('click', (event) => {
+    if (event.target.parentElement.classList.contains('un-checked-note-body')) {
+      AddClassCheck(event.target.parentElement, 'un-checked-note-body', 'checked-note-body');
+    } else {
+      AddClassCheck(event.target.parentElement, 'checked-note-body', 'un-checked-note-body');
+    }
+
+  });
+});
+
+
+const AddClassCheck = (Element, removeClass, addedClass) => {
+  Element.classList.remove(removeClass);
+  Element.classList.add(addedClass);
+}
 
 
