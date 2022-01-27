@@ -1,7 +1,3 @@
-// start app project
-console.log('start projects');
-
-
 // *Toggle Add form
 const buttonShowForm = document.getElementById('button-show-form');
 const buttonCloseModal = document.getElementById('close-modal');
@@ -43,7 +39,7 @@ const numberOfTasks = document.getElementById('numberOfTasks');
 // what add ;
 const NewNote = (id, title, description, time) => {
   return `
-   <div class="note-list" id="note-number-${id}">
+   <div class="note-list" id="note-number-${id}" data-index-number="${id}">
         <div class="note-left">
             <div class="check-box checked-note" id="btn-check-${id}">
                 <i class="fa fa-check"></i>
@@ -102,9 +98,10 @@ formAddNote.addEventListener('submit', (event) => {
 
     // save data to local storage
     SaveDataToLocalStorage(objectFormInput);
+
     loadNumberOfTasks(JSON.parse(localStorage.getItem('formNote')) || []);
 
-    containerBody.innerHTML += NewNote(id, title, description, timeOfNoting);
+    containerBody.innerHTML += NewNote(objectFormInput.id, title, description, timeOfNoting);
   } else {
     alert("sorry Enter title and description");
   }
@@ -125,6 +122,7 @@ const SaveDataToLocalStorage = (input) => {
 
   // Re-serialize the array back into a string and store it in localStorage
   localStorage.setItem('formNote', JSON.stringify(data));
+  location.reload();
 }
 
 
@@ -142,13 +140,45 @@ const loadNumberOfTasks = (arrayOfNotes) => {
 loadAllNote(JSON.parse(localStorage.getItem('formNote')) || []);
 
 
-// delete note
+// * ***  -----------------  delete note -------------   ***
+
 
 const buttonTrash = document.querySelectorAll('.fa-trash');
 
 
-buttonTrash.forEach((e) => {
-  e.addEventListener('click', (event) => {
-    console.log(e.dataset.indexNumber)
-  })
-})
+buttonTrash.forEach((note) => {
+  note.addEventListener('click', () => {
+    RemoveDataFromLocalStorage(note.dataset.indexNumber);
+  });
+  loadNumberOfTasks(JSON.parse(localStorage.getItem('formNote')) || []);
+});
+
+
+// functions for delete note
+const RemoveDataFromLocalStorage = (indexNote) => {
+  // Parse the serialized data back into an array of objects
+  let data = JSON.parse(localStorage.getItem('formNote')) || [];
+
+  let filter = data.filter((note) => {
+    return note['id'] != indexNote;
+  });
+
+  containerBody.innerHTML = null;
+
+  filter.forEach(({id, title, description, timeOfNoting}) => {
+    containerBody.innerHTML += NewNote(id, title, description, timeOfNoting);
+  });
+
+
+  localStorage.removeItem('formNote');
+
+  // Re-serialize the array back into a string and store it in localStorage
+  localStorage.setItem('formNote', JSON.stringify(filter));
+
+  location.reload();
+}
+
+
+// fun for done tasks
+
+
