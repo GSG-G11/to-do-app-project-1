@@ -70,28 +70,22 @@
             <div class="time-note">7:50 am</div>
             <div class="actions-note">
                 <i class="fa fa-trash"></i>
-                <i class="fa fa-edit"></i>
+                <!--                <i class="fa fa-edit"></i>-->
             </div>
         </div>
         <!-- end of note right -->
     </div>
 </div>
 
-<!-- container fixed bottom nav -->
-<!--<div class="container-fixed-bottom-nav">-->
-<!--    <div class="container-nav">-->
-<!--        <button class="button-delete-completed">-->
-<!--            Delete completed-->
-<!--        </button>-->
-<!--    </div>-->
-<!--</div>-->
-<!-- end of container fixed bottom nav -->
 
-<!-- container modal -->
-<div class="container-modal">
+<!-- container modal --> <!-- modal-hide or modal-show-->
+<div class="container-modal modal-hide">
     <div class="modal-overlay"></div>
     <div class="modal-body">
-        <h3 class="modal-title">Modal Title</h3>
+
+        <i class="modal-close">X</i>
+
+        <h3 class="modal-title">Create New Note</h3>
 
         <form class="form-add-note" id="form-add-note">
             <label class="form-label">
@@ -102,20 +96,11 @@
                 <textarea class="form-description">Your Description ...</textarea>
             </label>
 
-            <button class="button-container" type="submit">Create</button>
+            <div class="form-container-button">
+                <button class="button-form" type="submit">Create</button>
+            </div>
         </form>
 
-        <form class="form-update-note form-hidden" id="form-update-note">
-            <label class="form-label">
-                <input autocomplete="off" class="form-title" type="text" value="hi how are you...">
-            </label>
-
-            <label class="form-label">
-                <textarea class="form-description">hi how are you</textarea>
-            </label>
-
-            <button class="button-container" type="submit">Update</button>
-        </form>
     </div>
 </div><!-- end of Container modal-->
 
