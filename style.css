@@ -98,7 +98,7 @@ body {
   font-family: Ubuntu, Helvetica, Arial, serif;
 }
 
-/* header Styles */
+/* -----------------------------  header Styles -------------------------------- */
 .container-fixed-header {
   background-color: var(--bg-effect-color);
   background-image: url('/images/backGround-header.jpg');
@@ -193,7 +193,8 @@ body {
 }
 
 
-/*Body the ToDo*/
+/**/
+/*!! ------------------------- Body the TheToDo ------------------------- */
 .container-body {
   background-color: var(--bg-body-todo);
   border-radius: 0 0 8px 8px;
@@ -279,7 +280,8 @@ body {
 }
 
 
-/*note checked*/
+/*!! ------------------------- checked Style ------------------------- */
+
 .checked-note {
   background-color: var(--bg-check-box-check);
 }
@@ -297,6 +299,8 @@ body {
   color: var(--title-to-do);
 }
 
+
+/*!! ------------------------- modal Style ------------------------- */
 
 .modal-overlay {
   position: fixed;
@@ -363,6 +367,9 @@ body {
   margin: 5px 0;
   padding: 5px 0;
 }
+
+
+/*!! ------------------------- form Style ------------------------- */
 
 .form-add-note {
   display: flex;
@@ -434,7 +441,7 @@ body {
   background: #6a59bb;
 }
 
-/*!! media queries */
+/*!! -------------------------  media queries ------------------------- */
 
 /* media only screen less than 900px  */
 @media only screen and (max-width: 900px) {

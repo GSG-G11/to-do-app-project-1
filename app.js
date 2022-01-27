@@ -29,14 +29,16 @@ function closeModal() {
 // * *** ---------------- end toggle modal  --------------  ***
 
 
-// *** * ------------- Add note and store it ------------------ * ***
+// * ***  ------- 👉 👌    ADD NOTE AND STORE IT     👉 👌 -------   ***
+
+// ? ❤ ---- *** Constant For Elements  *** ----- ❤
 const formAddNote = document.getElementById('form-add-note');
 const formTitle = document.getElementById('form-title');
 const formDescription = document.getElementById('form-description');
 const containerBody = document.getElementById('container-body');
 const numberOfTasks = document.getElementById('numberOfTasks');
 
-// what add ;
+// ? ❤ ---- *** HTML For Append in Note body  *** ----- ❤
 const NewNote = (id, title, description, time) => {
   return `
    <div class="note-list" id="note-number-${id}" data-index-number="${id}">
@@ -66,7 +68,8 @@ const NewNote = (id, title, description, time) => {
   `;
 }
 
-// function to format date
+
+// ? ❤ ---- *** Function to format date  *** ----- ❤
 const formatDate = (date) => {
   let hours = date.getHours();
   let minutes = date.getMinutes();
@@ -112,7 +115,7 @@ formAddNote.addEventListener('submit', (event) => {
   formDescription.value = null;
 })
 
-
+// ? ❤ ---- *** Function to Save Data To Local Storage  *** ----- ❤
 const SaveDataToLocalStorage = (input) => {
   let data = [];
   // Parse the serialized data back into an array of objects
@@ -127,26 +130,30 @@ const SaveDataToLocalStorage = (input) => {
 }
 
 
-// Load all notes
+// * ***  ------- 👉 👌  ------  LOADING ------  👉 👌 -------   ***
+
+// ? ❤ ---- *** Function load All Note  *** ----- ❤
 const loadAllNote = (arrayOfNotes) => {
   arrayOfNotes.forEach(({id, title, description, timeOfNoting}) => {
     containerBody.innerHTML += NewNote(id, title, description, timeOfNoting);
   });
 }
 
+// ? ❤ ---- *** Function load Number Of Tasks  *** ----- ❤
 const loadNumberOfTasks = (arrayOfNotes) => {
   numberOfTasks.innerHTML = `${arrayOfNotes.length} Tasks`;
 }
 
+// ? ❤ ---- *** RUN Function  loadAllNote *** ----- ❤
 loadAllNote(JSON.parse(localStorage.getItem('formNote')) || []);
 
 
-// * ***  -----------------  delete note -------------   ***
+// * ***  ------- 👉 👌  ------  DELETE NOTE ------  👉 👌 -------   ***
 
-
+// ? ❤ ---- ***  get element  *** ----- ❤
 const buttonTrash = document.querySelectorAll('.fa-trash');
 
-
+// ? ❤ ---- ***  forEach for delete note (for loop on button) *** ----- ❤
 buttonTrash.forEach((note) => {
   note.addEventListener('click', () => {
     RemoveDataFromLocalStorage(note.dataset.indexNumber);
@@ -155,7 +162,7 @@ buttonTrash.forEach((note) => {
 });
 
 
-// functions for delete note
+// ? ❤ ---- ***  functions for delete note *** ----- ❤
 const RemoveDataFromLocalStorage = (indexNote) => {
   // Parse the serialized data back into an array of objects
   let data = JSON.parse(localStorage.getItem('formNote')) || [];
@@ -180,9 +187,10 @@ const RemoveDataFromLocalStorage = (indexNote) => {
 }
 
 
-// fun for done tasks
+// ? ❤ ---- ***  get element  *** ----- ❤
 const noteList = document.querySelectorAll('.container-note');
 
+// ?  ***** -----  loop to effect for note to check ro not ----   *****
 noteList.forEach((note) => {
   note.addEventListener('click', (event) => {
     if (event.target.parentElement.classList.contains('un-checked-note-body')) {
@@ -195,6 +203,7 @@ noteList.forEach((note) => {
 });
 
 
+// ?  ***** -----  Functions For Add Class and remove other class when check element ----   *****
 const AddClassCheck = (Element, removeClass, addedClass) => {
   Element.classList.remove(removeClass);
   Element.classList.add(addedClass);
